@@ -51,7 +51,7 @@ const btn = document.querySelector('.bts');
 const mypromise = new Promise((res)=>{BroadcastChannel.addEventListener('click',()=>{resolve("my promise is resolved");})
 ,(reg)=>{console.log("promise is rejacted");}})
 mypromise.then((res)=>{console.log(res)});
-*/ 
+*/
 
 
 
@@ -106,6 +106,7 @@ if({})console.log("truty value");else console.log("false value"); // {} is true 
  */
 
 
+/* 
 const result = false || {} ||null;
 console.log(result); // hear in | operater it search one true vlaue there itslef it stop execution and print it
 // op:= {} becouse it is true value
@@ -113,7 +114,7 @@ const result1 = false || 0 || "";
 console.log(result1); // op     empty becouse "" give empty but 
 const result2 = false || 0 || null;
 console.log(result2); // op  null  it give value ,if all value is false it search til last for true but it did not found so it print last false vlaue 
-
+ */
 
 /* // how to print fullfiled promise wethoud regacted and wethout then to handle it 
 console.log(Promise.resolve("promise is resolved"));// op:- Promise { 'promise is resolved' }
@@ -154,13 +155,47 @@ getdata(); */
 
 
 // we can pass data 
-function f1(a,b,c,d)
+/* function f1(a,b,c,d)
 {
     console.log(a,b,c,d);
 }
 f1(...[10,20,30,40]);
 
 
+
+*/
+// use of isNaN(not-A-number):- it give true if value is anything except number ,and if itis number it give flase
+/* console.log(isNaN("hello"));
+console.log(isNaN(200));
+ */
+
+
+
+// if you delet anyu element from array alos it have "empty" space on that place,so that length should be same 
+/*
+let arr = [1,2,3,4,5]
+arr[3].delete;
+console.log(arr.length );// 5
+console.log(arr);//[ 1, 2, 3, 4, 5 ]
+//but if use same delete in object it not make it as "empty" instead remove full key-value both.
+let obj = {name:"pradhumn",age:10};
+delete obj.name;
+console.log(obj);//op { age: 10 } //in obejct full value will deleted but not in array 
+*/
+
+
+
+
+
+
+// diff between "var" and "let"
+for (let i = 0; i < 5; i++) {
+    setTimeout(() => { console.log(i) }, 1); //op:- 5 5 5 5 5 
+}
+for (let i = 0; i < 5; i++) {
+    setTimeout(() => { console.log(i) }, 1); //op:-0 1 2 3 4 5 
+}
+// why there output is diff 
 
 
 
