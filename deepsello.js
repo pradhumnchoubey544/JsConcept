@@ -20,9 +20,12 @@ function makedeepcopy(obj)
     }
     return copiedval;
 }
-var copy = makedeepcopy({"kay":"ram","age":20});
+var copy = makedeepcopy({kay:"ram",age:20});
 
 //###So by using deepcopy we can create object real copy so that we can change in obj2 whihc not change vlaue of obj1;
+
+
+
 
 
 
