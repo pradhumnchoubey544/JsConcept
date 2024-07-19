@@ -1,3 +1,5 @@
+const { ModuleDetectionKind } = require("typescript");
+
 let obj1 = {"name":"rohon","age":13,"height":3.6};
 let obj2=obj1;
 obj2.age=14;
@@ -31,3 +33,34 @@ var copy = makedeepcopy({kay:"ram",age:20});
 
 
 
+
+
+
+
+
+/* 
+what is node js 
+waht is event loop
+waht is npm
+what is event emiter
+what is buffer
+whatt is aggrigation
+what is stream
+what is module explain in breaf
+waht is diff in sql and no sql DB
+what is indexing
+what is fork
+what is libuv
+what http method and explain me
+what is put and patch diff
+what is middelwear
+what is triger
+node js REPL
+how can you handle in node js
+explain the consept of collection in Mongodb
+what is advantage and disadvatage in node js
+what is shearding in node js
+what are some commonly use timeing featurs of node js
+what is chide process in node js
+
+*/

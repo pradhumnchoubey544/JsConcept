@@ -195,7 +195,14 @@ for (let i = 0; i < 5; i++) {
 for (let i = 0; i < 5; i++) {
     setTimeout(() => { console.log(i) }, 1); //op:-0 1 2 3 4 5 
 }
-// why there output is diff 
+// resone in there op becouse var we can access out side of bllock scop but not let & const
+
+
+
+
+console.log(true,"hello"); 
+console.log(+true);// in js if you put + before any thing it become number op:- 1
+console.log(typeof +true);// typeOf 1 is number so OP:- number
 
 
 
@@ -209,6 +216,14 @@ for (let i = 0; i < 5; i++) {
 
 
 
+
+
+
+
+
+
+
+  
 
 
 
