@@ -29,6 +29,23 @@ var copy = makedeepcopy({kay:"ram",age:20});
 
 
 
+// what is Polyfill :- if some mathod is not presend so you have to write its code manualy like 
+//                      some browser versone map function is not define so we have to write polyfill mena write manual code for map method
+
+
+// what is call,apply,bind ?
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

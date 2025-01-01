@@ -206,19 +206,44 @@ console.log(typeof +true);// typeOf 1 is number so OP:- number
 
 
 
+//## 1.
+const input = [2 ,7,11,4,-2];
+const output = [20,15,11,18,24];
+//ex for first iteration of input have totle sum is all vlaue except that perticulr index in output first vlaue .
+// for first value is -2 +7 +11 +4  +-2 = 20
+// for second         +2 -7 +11 +18 +24 = 15
 
 
 
+//## 2 find the new object whihc have some key and vlaue in both object.
+const input1 = {a:1,b:2,c:3,d:10,e:12}
+const input2 = {a:1,e:12,f:3,d:10}
+const output3 ={d:12,e:2}
 
 
+//##3 second largest number
+const input11 = [1,2,-2,11,7,1] 
+const output11 = 7;
+// or second use case
+const input12 = [1,4,7,2,4,7] 
+const output22 = 4 // hear also 
 
+//##4 rotare the array by two index forwoed 
+const inp = [2,7,11,4,-2]
+const out = [11,4,-2,2,7]
 
+//##5 find this mising odd number in array
+let odd = [3,7,9,11,15,17];
+let outputt = 13;
 
+//##6  the full stirng reverse based in word
+let string  = "this is js editer";
+let outpytt = "sith si sj retide";
 
+//##7 find the most repeded cheracter in array 
+let str = "this is javascript code editer and find this most max number of times repeded cherater";
 
-
-
-
+//##8 
 
 
 
