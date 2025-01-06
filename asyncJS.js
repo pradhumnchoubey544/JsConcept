@@ -163,15 +163,104 @@ async function fetchWithDelay() {
   } 
   fetchWithDelay();
 
+//-------------------------------------------------------------------------------------------
+//Case:-1
+const startTime = performance.now(); // Record the start time
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise Resolved value !!! p1");
+  }, 10000); // 10 seconds
+});
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise Resolved value !!! p2");
+  }, 5000); // 5 seconds
+});
+
+const endTime = performance.now(); // Record the end time
+
+async function handlePromise() {
+  console.log("hello world");
+
+  // Awaiting p1 after it has already started execution
+  const val = await p1;
+  console.log("namaste js");
+  console.log(val);
+
+  // Awaiting p2 after it has already started execution
+  const val2 = await p2;
+  console.log("namaste js");
+  console.log(val2);
+}
+
+handlePromise();
+console.log(`Total execution time: ${(endTime - startTime) / 1000} seconds`);
+
+// Comments:
+// 1. Both p1 and p2 start execution immediately when they are declared.
+// 2. The "await" keyword pauses execution only at the time of accessing the result.
+// 3. Since both promises are resolving in parallel, their timers run concurrently.
+// 4. Total execution time is determined by the slower promise (10 seconds for p1).
+//* if we make p1 to 10000 and p2 5000 and all p1&p2 will print at same time and totleExecutiontime is 10000ms
+//* if we make p1 to 5000 and p2 10000 and firls p1 will print and after 5000ms p2 will print and totleExecutiontime is 10000ms
+
+//Case:-2
+async function example() {
+  const startTime = performance.now(); // Record the start time
+
+  // First promise starts only now and blocks until it resolves
+  const first = await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("First resolved");
+      resolve("First");
+    }, 10000); // 10 seconds
+  });
+
+  const endTime = performance.now(); // Record the end time
+  console.log(`Total execution time: ${(endTime - startTime) / 1000} seconds`);
+  console.log("mid");
+
+  // Second promise starts after the first promise resolves
+  const second = await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Second resolved");
+      resolve("Second");
+    }, 5000); // 5 seconds
+  });
+
+  // Third promise starts after the second promise resolves
+  const third = await new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Third resolved");
+      resolve("Third");
+    }, 5000); // 5 seconds
+  });
+}
+
+example();
+
+// Comments:
+// 1. Promises in this code execute sequentially due to the "await" keyword.
+// 2. Each "await" pauses the function execution until the current promise resolves.
+// 3. Total execution time is the sum of all timers: 10 seconds + 5 seconds + 5 seconds = 20 seconds.
+// 4. Unlike Case 1, promises do not run in parallel, as each one starts only after the previous one resolves.
+//-----------------------------------------------------------------------------------------------
+
+# when assinc task which is handover to web-api , if there is multiple task like multiple promises then web-api will handle it by usig multiple thred in background 
+"web-api will handle multiple task by help of multiple thread in background" exaple in case:-1
 
 
-
-
+Q what js is not multi threaded and it is single thread ?
+JavaScript is single-threaded to ensure predictable and conflict-free DOM manipulation, avoiding the complexity of multi-threading. It achieves concurrency through asynchronous programming, leveraging Web APIs and the Event Loop for non-blocking operations.
 
 # diff in (then.catch) and (try.catch) ??
+ans:- when deal with primse and for each promise you need to give spacific error you can use then.catch , using in old time 
+      when you have to insert bulk of promises (in try black) and show one catch block use try.catch , using in latest time
 
 
-
+Q which to use async-await or promise.then.catch ?
+async-await is syntact suger internaly it is using promise.then.catch only.
+in morden days async-await dev are using and it look cleaner and proper when deal with promise.
 
 
 
