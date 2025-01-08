@@ -246,7 +246,16 @@ let str = "this is javascript code editer and find this most max number of times
 //##8 
 
 
-
+let arr = ["a",1,"b","c",2,3];
+let stringArr=[];
+let numArr=[];
+for(let i = 0 ;i< arr.length;i++)
+    {
+        if(typeof arr[i]=== 'string')stringArr.push(arr[i]);
+        else if(typeof arr[i]==='number') numArr.push(arr[i]);             
+    }
+console.log("String Array:", stringArr); // ["a", "b", "c"]
+console.log("Number Array:", numArr);   // [1, 2, 3]
 
   
 
@@ -282,8 +291,3 @@ let str = "this is javascript code editer and find this most max number of times
 
 
 
-/* 
-2003141030009882
-central mp gramin bank  lalit choubey
-
- */
